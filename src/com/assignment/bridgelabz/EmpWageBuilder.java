@@ -2,15 +2,13 @@ package com.assignment.bridgelabz;
 
 
 public class EmpWageBuilder {
-	    //Declaring constant
-		final static int FULL_TIME=1;
-		final static int PART_TIME=2;
+	    
 //		
 		
 			
 			
 			//This method returns daily wage of employee
-			  public static int  computeDailyWage(int wage_per_hour,int MaxhourPerMonth,int no_workingday) {
+			  public static  void computeDailyWage(int wage_per_hour,int MaxhourPerMonth,int no_workingday,String company) {
 			    	
 			    	//Variable declaring
 					 int working_hour=0;
@@ -23,12 +21,12 @@ public class EmpWageBuilder {
 
 		        int empType = (int) (Math.random() * 10) % 3;
 		        switch(empType) {
-		        case FULL_TIME:
+		        case 1:
 			      {
 				   working_hour=8;
 				   break;
 			       }
-			       case PART_TIME:
+			       case 2:
 			       {
 				   working_hour=4;
 				   break;
@@ -46,13 +44,15 @@ public class EmpWageBuilder {
 		}
 				total_wage= totalhr * wage_per_hour;
 				
-			    return total_wage;
+			    System.out.println("Total wage for company "+company+" is "+total_wage);
 		}
 			
 
 		     public static void main(String[] args) {
 		    	 
-		    	 System.out.println(computeDailyWage(20, 20, 100));
+		    	 computeDailyWage(20, 20, 100,"DMart");
+		    	 computeDailyWage(25, 10, 100,"V2");
+		    	 computeDailyWage(30, 15, 100,"BIGBAZAR");
 			 
 		 }
 	}
